@@ -4,6 +4,7 @@
 3.Http 服务需要实现 api.md中的接口
 4.file_get_download.txt,file_list.txt是dmg的抓包文件
 5.api.md中的接口/file/list对应file_list.txt，/file/getDownloadUrl对应file_get_download_url.txt
-6.file_get_download_url中并没有返回 url ，而是返回encrypt_url，需要解密后填充到 url 再返回
+6.file_get_download_url中并没有返回 url ，而是返回encrypt_url，需要解密后得到url(即 a_url), 将a_url进行本地代理格式化：http://本机局域网ip：http端口/file/download?url=a_url&size=xxx，注意考虑url是否需要编码
 7.外部调用Http服务的接口只能提供api.md中的数据，置于 header 以及一些其他参数需要从exe程序中获取
+8.file/download接口中，若请求头中没有Range分片请求，则补充range:0-(size-1)
 8.新打包的exe与旧exe可分开安装，可同时存在在同一台电脑上
