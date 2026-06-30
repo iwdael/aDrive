@@ -1,8 +1,9 @@
-在目录下的dmg程序中植入新功能，重新打包可运行的 dmg程序(adrive.dmg)，且再目录下保留分析操作记录，具体功能如下：
+在目录下的exe程序中植入新功能，重新打包可运行的exe程序(adrive.exe)，且再目录下保留分析操作记录，具体功能如下：
 1.对外提供Http 服务
 2.提供 mdns服务，name:dolphin , type:_http._tcp.local. , 端口随机且和 Http 服务使用同一个
 3.Http 服务需要实现 api.md中的接口
 4.file_get_download.txt,file_list.txt是dmg的抓包文件
 5.api.md中的接口/file/list对应file_list.txt，/file/getDownloadUrl对应file_get_download_url.txt
 6.file_get_download_url中并没有返回 url ，而是返回encrypt_url，需要解密后填充到 url 再返回
-7.外部调用Http服务的接口只能提供api.md中的数据，置于 header 以及一些其他参数需要从 dmg程序中获取
+7.外部调用Http服务的接口只能提供api.md中的数据，置于 header 以及一些其他参数需要从exe程序中获取
+8.新打包的exe与旧exe可分开安装，可同时存在在同一台电脑上
