@@ -48,3 +48,5 @@ data class DownloadUrlResponse(
     val size: Long? = null
 )
 ```
+
+/file/download?url=xxx&size=xxx

@@ -7,5 +7,4 @@ Sec-Fetch-Site: none
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Dest: empty
 Accept-Language: zh-CN
-Range: bytes=5242880-1053818879
 Referer: https://www.aliyundrive.com/
