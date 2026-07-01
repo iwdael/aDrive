@@ -9,3 +9,4 @@
 8.file/download接口中，获取url 进行get请求下载文件，该请求的请求头参照file_download.txt,其中的User-Agent来自应用内部。若file/download的请求头中没有Range分片请求，则补充range:0-(size-1)，将range填充到url下载的请求头中，确保请求头中必须有range
 9.抓包文件中的请求头的值参照程序内部调用该接口时的填充值
 10.新打包的exe与旧exe可分开安装，可同时存在在同一台电脑上
+11.所有的记录和临时文件放到build目录下

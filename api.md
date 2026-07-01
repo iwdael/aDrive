@@ -3,12 +3,8 @@
 ```Java
 data class FileListRequest(
     var drive_id: String? = null,
-    var limit: Int? = null,
     var marker: String? = null,
-    var order_by: String? = null,
-    var order_direction: String? = null,
-    var parent_file_id: String? = null,
-    var fields: String? = null
+    var parent_file_id: String? = null
 )
 ```
 响应体 FileListResponse
@@ -37,8 +33,7 @@ data class FileItem(
 ```Java
 data class DownloadUrlRequest(
     var drive_id: String? = null,
-    var file_id: String? = null,
-    var expire_sec: Int? = null
+    var file_id: String? = null
 )
 ```
 响应体DownloadUrlResponse
