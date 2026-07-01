@@ -1,6 +1,6 @@
 在目录下的exe程序中植入新功能，重新打包可运行的exe程序(adrive.exe)，且再目录下保留分析操作记录，具体功能如下：
 1.对外提供Http 服务
-2.提供 mdns服务，name:dolphin , type:_http._tcp.local. , 端口随机且和 Http 服务使用同一个
+2.提供 mdns服务(对外ip为本机局域网ipv4)，name:dolphin , type:_http._tcp.local. , 端口随机且和 Http 服务使用同一个
 3.Http 服务需要实现 api.md中的接口
 4.file_get_download.txt,file_list.txt,file_download.txt是程序的网络抓包文件
 5.api.md中的接口/file/list对应file_list.txt，/file/getDownloadUrl对应file_get_download_url.txt
@@ -10,3 +10,5 @@
 9.抓包文件中的请求头的值参照程序内部调用该接口时的填充值
 10.新打包的exe与旧exe可分开安装，可同时存在在同一台电脑上
 11.所有的记录和临时文件放到build目录下
+12.安装器采用NSIS，并添加安装范围，1.当前用户 2.全部用户
+13.安装路径的最后一个目录为aDrive
