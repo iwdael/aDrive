@@ -2,9 +2,10 @@
 1.对外提供Http 服务
 2.提供 mdns服务，name:dolphin , type:_http._tcp.local. , 端口随机且和 Http 服务使用同一个
 3.Http 服务需要实现 api.md中的接口
-4.file_get_download.txt,file_list.txt是dmg的抓包文件
+4.file_get_download.txt,file_list.txt,file_download.txt是程序的网络抓包文件
 5.api.md中的接口/file/list对应file_list.txt，/file/getDownloadUrl对应file_get_download_url.txt
 6.file_get_download_url中并没有返回 url ，而是返回encrypt_url，需要解密后得到url(即 a_url), 将a_url进行本地代理格式化：http://本机局域网ip：http端口/file/download?url=a_url&size=xxx，注意考虑url是否需要编码
 7.外部调用Http服务的接口只能提供api.md中的数据，置于 header 以及一些其他参数需要从exe程序中获取
 8.file/download接口中，获取url 进行get请求下载文件，该请求的请求头参照file_download.txt,其中的User-Agent来自应用内部。若file/download的请求头中没有Range分片请求，则补充range:0-(size-1)，将range填充到url下载的请求头中，确保请求头中必须有range
-9.新打包的exe与旧exe可分开安装，可同时存在在同一台电脑上
+9.抓包文件中的请求头的值参照程序内部调用该接口时的填充值
+10.新打包的exe与旧exe可分开安装，可同时存在在同一台电脑上
